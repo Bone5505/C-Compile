@@ -82,6 +82,7 @@ int  main () {
     read_file.close();
   }
 
+  // Read argument list
   vector<string> args_list;
   read_file = ifstream(arg_file);
   while(getline(read_file,line)) {
@@ -90,7 +91,6 @@ int  main () {
       args_list.push_back(line);
     }
   }
-
 
   // Create Compile String
   string run_string = "g++ ";
