@@ -86,7 +86,6 @@ int  main () {
   vector<string> args_list;
   read_file = ifstream(arg_file);
   while(getline(read_file,line)) {
-    line.erase(std::remove(line.begin(),line.end(),' '), line.end());
     if (line.size() > 0) {
       args_list.push_back(line);
     }
@@ -98,11 +97,6 @@ int  main () {
   {
     run_string += "-I" + header + " ";
   }
-  run_string += "-I " + std::string("D:\\MinGW-w64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++ ");
-  run_string += "-I " + std::string("D:\\MinGW-w64\\mingw64\\include ");
-  run_string += "-I " + std::string("D:\\MSYS64\\mingw64\\include\\gtk-3.0 ");
-  run_string += "-I " + std::string("D:\\MSYS64\\mingw64\\include\\glib-2.0 ");
-  run_string += "-I " + std::string("D:\\MSYS64\\mingw64\\lib\\glib-2.0\\include ");
   
   run_string += "-g ";
   for (string* source : sources)
@@ -113,7 +107,7 @@ int  main () {
   run_string += " -o " + main_file[1];
   for (int i = 0; i < args_list.size(); i++)
   {
-    run_string += " -" +  string(args_list[i]);
+    run_string += string(args_list[i]);
   }
   std::cout << run_string.c_str() << std::endl;
   if (system(run_string.c_str()) == 0) {
