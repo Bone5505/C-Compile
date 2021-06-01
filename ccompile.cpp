@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {
     if (c_file_stream.is_open()) {
         while(getline(c_file_stream,c_file_line)) {
             c_file_line = remove_extra_spaces(c_file_line);
-            index = c_file_line.find("-F ",0);
+            index = c_file_line.find("-f ",0);
             if (index != string::npos) {
                 process_folder(c_file_line.substr(3,c_file_line.length()-3), &c_args);
             }
