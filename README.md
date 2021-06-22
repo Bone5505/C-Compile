@@ -6,6 +6,7 @@ Compiles C++ code and runs the exe produced.
 ## Installation
 Simply compile the `ccompile.cpp` into the required executable. Then add it to the Path.
 
+## How to Use
 To add exrta arguments the one can create a `.cm` file and pass it as an argument to the ccompile executable.
 
 To add a folder to look through for header or source files add `-f path/to/folder` and it will search through automatically. Make sure to add the space after the `-f`.
