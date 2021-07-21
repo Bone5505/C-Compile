@@ -130,8 +130,7 @@ int main(int argc, char* argv[]) {
         run_string.erase(i,1);
     }
     run_string = remove_extra_spaces(run_string);
-    cout << run_string << endl;
-    cout << run_string << endl;
+    cout << run_string << endl << endl;
     if (system(run_string.c_str()) == 0) {
         c_main.erase(0,2);
         system(c_main.c_str());
